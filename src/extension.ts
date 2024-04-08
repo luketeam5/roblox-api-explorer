@@ -119,7 +119,7 @@ const Scopes: { [index: string]: Scope } = {
     searchText: "",
     placeholderText: "Filter...",
 
-    getItems(state) {
+    getItems() {
       if (!this.focus) {
         return []
       }
