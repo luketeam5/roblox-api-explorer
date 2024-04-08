@@ -12,8 +12,8 @@ async function getJson(url: string) {
 }
 
 function stripHtml(str?: string) {
-  if (str == null) return
-  return str.replace(/<[^>]*>?/gm, "")
+  if (str === null) {return}
+  return str?.replace(/<[^>]*>?/gm, "")
 }
 
 function convertDocsFunction(name: string, entry: any, tag?: string) {
@@ -69,8 +69,8 @@ function extractFromDocs(docs: any) {
   const globals = []
   const dataTypes = []
 
-  for (let key in docs) {
-    if (key.includes(".")) continue // optimization
+  for (const key in docs) {
+    if (key.includes(".")) {continue} // optimization
 
     const match = key.match(/^(?:@roblox|@luau)\/global\/(\w+)$/)
 
